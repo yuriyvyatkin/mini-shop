@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkmini_shop=self.webpackChunkmini_shop||[]).push([[857],{857:(e,n,s)=>{s.r(n),s.d(n,{default:()=>u});var t=s(294);const u=function(){return t.createElement("span",null,"Здесь пока нет никаких данных.")}}}]);
