@@ -4,6 +4,13 @@ import Slider from "@/components/common/Slider";
 import styles from "./styles.module.scss";
 
 const Tab1 = () => {
+  const handleScrollToContacts = () => {
+    const element = document.getElementById('contacts');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <>
       <div className={styles.content__column}>
@@ -29,7 +36,7 @@ const Tab1 = () => {
           </ul>
         </div>
 
-        <Button text="Заказать" />
+        <Button text="Заказать" clickHandler={handleScrollToContacts} />
       </div>
 
       <Slider slides={slides} />

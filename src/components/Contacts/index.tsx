@@ -47,7 +47,7 @@ const Contacts = () => {
   };
 
   return (
-    <div className={styles.contacts}>
+    <div className={styles.contacts} id="contacts">
       <ContactsInfo />
 
       <form className={styles.form} noValidate onSubmit={handleFormSubmit}>
