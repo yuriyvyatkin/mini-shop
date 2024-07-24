@@ -1,0 +1,28 @@
+.header {
+  font-weight: 800;
+  font-size: 56px;
+  line-height: 1;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 44px;
+  column-gap: 24px;
+
+  margin-top: 88px;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 44px;
+  column-gap: 292px;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 48px;
+
+  font-size: 20px;
+  line-height: 1.6;
+}

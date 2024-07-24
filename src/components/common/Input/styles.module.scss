@@ -1,0 +1,143 @@
+.inputGroup {
+  position: relative;
+
+  margin-bottom: 32px;
+
+  &__input {
+    display: block;
+
+    width: 100%;
+    padding: 10px 10px 10px 5px;
+    border: none;
+
+    font-size: 18px;
+
+    border-bottom: 1px solid rgba(14, 144, 222, .16);
+  }
+
+  &__input:focus {
+    outline: none;
+  }
+
+  /* лейбл */
+  &__label {
+    position: absolute;
+    top: 10px;
+    left: 5px;
+
+    font-weight: normal;
+    font-size: 18px;
+
+    color: rgba(#1c1f23, .4);
+
+    pointer-events: none;
+    transition: .2s ease all;
+
+    -moz-transition: .2s ease all;
+    -webkit-transition: .2s ease all;
+  }
+
+  /* активное состояние лейбла */
+  &__input:focus ~ &__label,
+  &__input:valid ~ &__label {
+    top: -20px;
+
+    font-size: 14px;
+
+    color: var(--color-blue-500);
+  }
+
+  /* нижний бар */
+  &__bar {
+    position: relative;
+    display: block;
+
+    width: 100%;
+  }
+
+  &__bar:before,
+  &__bar:after {
+    content: '';
+    position: absolute;
+    bottom: 1px;
+
+    width: 0;
+    height: 2px;
+
+    background: var(--color-blue-500);
+
+    transition: .2s ease all;
+
+    -moz-transition: .2s ease all;
+    -webkit-transition: .2s ease all;
+  }
+
+  &__bar:before {
+    left: 50%;
+  }
+
+  &__bar:after {
+    right: 50%;
+  }
+
+  /* активное состояние нижнего бара */
+  &__input:focus ~ &__bar:before,
+  &__input:focus ~ &__bar:after {
+    width: 50%;
+  }
+
+  /* подсветка */
+  &__highlighter {
+    position: absolute;
+    top: 25%;
+    left: 0;
+
+    width: 100px;
+    height: 60%;
+
+    opacity: .5;
+    pointer-events: none;
+  }
+
+  /* активное состояние */
+  &__input:focus ~ &__highlighter {
+    animation: inputHighlighter .3s ease;
+
+    -webkit-animation: inputHighlighter .3s ease;
+    -moz-animation: inputHighlighter .3s ease;
+  }
+
+  /* анимация */
+  @-webkit-keyframes inputHighlighter {
+    from {
+      background: var(--color-blue-500);
+    }
+    to {
+      width: 0;
+
+      background: transparent;
+    }
+  }
+
+  @-moz-keyframes inputHighlighter {
+    from {
+      background: var(--color-blue-500);
+    }
+    to {
+      width: 0;
+
+      background: transparent;
+    }
+  }
+
+  @keyframes inputHighlighter {
+    from {
+      background: var(--color-blue-500);
+    }
+    to {
+      width: 0;
+
+      background: transparent;
+    }
+  }
+}

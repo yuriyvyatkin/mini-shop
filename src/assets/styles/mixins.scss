@@ -1,0 +1,29 @@
+%background-with-gradient {
+  background:
+    linear-gradient(
+      var(--color-white),
+      var(--color-white),
+    ) padding-box,
+    linear-gradient(
+      to bottom right,
+      var(--color-red-500),
+      var(--color-pink-500),
+      var(--color-lilac-700),
+      var(--color-blue-450),
+    ) border-box;
+}
+
+%arrow {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+
+  width: 14px;
+  height: 2px;
+  border-radius: 1px;
+
+  transition: all .2s ease-in-out;
+  transform: translate(-50%, -50%);
+}

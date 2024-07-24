@@ -1,0 +1,45 @@
+.content {
+  &__column {
+    display: flex;
+    flex-direction: column;
+
+    max-width: 650px;
+
+    word-break: normal;
+    overflow-wrap: anywhere;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    margin-top: 48px;
+
+    &__header {
+      display: flex;
+
+      padding: 8px 12px;
+      border-radius: 27px;
+
+      font-size: 16px;
+      line-height: 1;
+
+      color: var(--color-white);
+      background: linear-gradient(
+        to right,
+        var(--color-red-500),
+        var(--color-pink-500),
+        var(--color-lilac-700),
+        var(--color-blue-450),
+      );
+    }
+
+    &__points {
+      margin-top: 24px;
+      padding-left: 2em;
+
+      list-style: disc;
+    }
+  }
+}

@@ -1,0 +1,138 @@
+@import '@styles/mixins.scss';
+
+.tab {
+  position: relative;
+  z-index: 0;
+  display: flex;
+  column-gap: 32px;
+  justify-content: space-between;
+  align-items: center;
+
+  max-width: 422px;
+  padding: 46.5px 40px;
+  border: 2px solid transparent;
+  border-radius: 32px;
+
+  @extend %background-with-gradient;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    bottom: 1px;
+    left: 1px;
+    z-index: -1;
+
+    border-radius: 32px;
+
+    background-color: var(--color-white);
+  }
+
+  &__icon {
+    position: absolute;
+    top: 0;
+    left: 49px;
+
+    transform: translateY(-50%);
+
+    &::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      z-index: -1;
+
+      width: 100%;
+      width: 72px;
+      height: 100%;
+      height: 72px;
+      border-radius: 50%;
+
+      background-color: var(--color-white);
+
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  &__name {
+    font-weight: 700;
+    font-size: 24px;
+    word-break: normal;
+    overflow-wrap: anywhere;
+  }
+
+  &__status {
+    position: relative;
+    z-index: 0;
+
+    min-width: 48px;
+    min-height: 48px;
+    border: 2px solid transparent;
+    border-radius: 40px;
+
+    background-color: var(--color-white-050);
+
+    cursor: pointer;
+
+    @extend %background-with-gradient;
+
+    &::before,
+    &::after {
+      background-color: var(--color-black-800);
+
+      @extend %arrow;
+    }
+
+    &::before {
+      transform: translate(-50%, 225%) rotate(-45deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -225%) rotate(45deg);
+    }
+
+    &:hover {
+      &::before {
+        width: 18px;
+
+        transform: translate(-50%, -50%) rotate(45deg);
+      }
+
+      &::after {
+        width: 18px;
+
+        transform: translate(-50%, -50%) rotate(-45deg);
+      }
+    }
+  }
+}
+
+.tab_active {
+  &::before {
+    background-color: var(--color-white-050);
+  }
+
+  &__icon {
+    &::before {
+      background-color: var(--color-white-050);
+    }
+  }
+
+  &__status {
+    cursor: default;
+
+    &::before,
+    &::after {
+      width: 18px;
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(-45deg);
+    }
+  }
+}
